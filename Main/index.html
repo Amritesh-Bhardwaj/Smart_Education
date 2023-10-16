@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIPLAY</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../pictures/LOGO.ico"></link>
+    <style>
+            
+        
+</style>
+</head>
+
+<body>
+    <div class="parent-main" id="parent-main">
+        <div class="div1" id="div1">
+
+            <div class="site-name">
+                <img src="../pictures/DP-1-removebg-preview (1).ico" class="DP" alt="" title="">
+            </div>
+
+            <div class="profile">
+                <!-- <img src="https://dummyimage.com/307x100/000/fff" alt="Intitute image" title="Intitute image"> -->
+                <div class="image">
+                    <img class="prof-img" src="../pictures/profile.jpg" alt="profile pic"
+                        title="Name">
+                </div>
+                <div class="name">
+                    <h2>Gurkirat Singh</h2>
+                </div>
+                <div class="occupation">
+                    <h2>Student</h2>
+                </div>
+                <div class="view-profile">
+                    <a href="#">
+                        <button class="prof-btn">View Profile</button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="dashboard-menu">
+                <ul>
+                    <li class="menu-item-1">
+                        <button class=" menu-effect" onclick="dashboard()" id="menu-item-1">
+                            <img class="menu-svg" src="../pictures/apps.png" alt="">
+                            <!-- <i class="fi fi-rr-apps"></i> -->
+                            Dashboard
+                        </button>
+                    </li>
+                    <li class="menu-item-2">
+                        <button class=" menu-effect" onclick="progress_chat()" id="menu-item-2">
+                            <img class="menu-svg" src="../pictures/chart-line-up.png" alt="">
+                        Progress Chats
+                        </button>
+                    </li>
+                    <li class="menu-item-3">
+                        <button class="menu-effect" onclick="practice_tests()" id="menu-item-3">
+                            <img class="menu-svg" src="../pictures/test.png" alt="">
+                        Practice Tests
+                        </button>
+                    </li>
+                    <li class="menu-item-4">
+                        <button class="menu-effect" onclick="analyses()" id="menu-item-4">
+                            <img class="menu-svg" src="../pictures/search-alt.png" alt="">
+                        Analyses
+                        </button>
+                    </li>
+                    <li class="menu-item-5">
+                        <button class=" menu-effect" onclick="results()" id="menu-item-5">
+                            <img class="menu-svg" src="../pictures/clipboard-list-check.png" alt="">
+                        Result
+                        </button>
+                    </li>
+                    <li class="menu-item-6">
+                        <button class=" menu-effect" onclick="concept_videos()" id="menu-item-6">
+                            <img class="menu-svg" src="../pictures/play-alt.png" alt="">
+                        Concept Videos
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="div2" id="div2">
+            <div class="dashboard" id="dashboard">
+                <div class="heading">
+                    <h1 class="h1">Dashboard</h1>
+                </div>
+                <div class="input-wrapper srch">
+                    <button class="icon" id="icon">
+                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24 "
+                            height="25px" width="25px">
+                            <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff"
+                                d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z">
+                            </path>
+                            <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff"
+                                d="M22 22L20 20"></path>
+                        </svg>
+                    </button>
+                    <input placeholder="search.." class="input" name="text" type="text">
+                </div>
+            </div>
+
+            <div id="page-1">
+                <div class="parent-box">
+                <div class="div01">
+                    <div class="shape-1">
+                        <img class="box-svg-1" src="../pictures/play-alt.png" alt="">
+                    </div>
+                    <h3 class="h3">Videos Watched</h3>
+                    <h3 class="h03">500</h3>
+                </div>
+                <div class="div02">
+                    <div class="shape-2">
+                        <img class="box-svg-2" src="../pictures/play-alt.png" alt="">
+                    </div>
+                    <h3 class="h3">Videos Left To Watch</h3>
+                    <h3 class="h03">500</h3>
+                </div>
+                <div class="div03">
+                    <div class="shape-3">
+                        <img class="box-svg-3" src="../pictures/clipboard-list.png" alt="">
+                    </div>
+                    <h3 class="h3">Quiz's attended</h3>
+                    <h3 class="h03">500</h3>
+                </div>
+                <div class="div04">
+                    <div class="shape-4">
+                        <img class="box-svg-4" src="../pictures/hourglass-start.png" alt="">
+                    </div>
+                    <h3 class="h3">Hours Spent</h3>
+                    <h3 class="h03">500</h3>
+                </div>
+                </div>
+
+                <div class="graph">
+                <div class="div001">
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script type="text/javascript">
+                        google.charts.load("current", { packages: ['corechart'] });
+                        google.charts.setOnLoadCallback(drawChart);
+                        function drawChart() {
+                            var data = google.visualization.arrayToDataTable([
+                                ["Subjects", "Marks", { role: "style" }],
+                                ["Physics", 12, "#b87333"],
+                                ["Maths", 10, "silver"],
+                                ["Chemistry", 19, "gold"],
+                                ["Biology", 17, "color: #e5e4e2"]
+                            ]);
+
+                            var view = new google.visualization.DataView(data);
+                            view.setColumns([0, 1,
+                                {
+                                    calc: "stringify",
+                                    sourceColumn: 1,
+                                    type: "string",
+                                    role: "annotation"
+                                },
+                                2]);
+
+                            var options = {
+                                title: "Latest Practice Test",
+                                width: 470,
+                                height: 400,
+                                bar: { groupWidth: "95%" },
+                                legend: { position: "none" },
+                            };
+                            var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+                            chart.draw(view, options);
+                        }
+                    </script>
+                    <div id="columnchart_values" style="width: 400px; height: 300px;"></div>
+                </div>
+
+                <div class="div002">
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script type="text/javascript">
+                        google.charts.load('current', { 'packages': ['corechart'] });
+                        google.charts.setOnLoadCallback(drawChart);
+
+                        function drawChart() {
+
+                            var data = google.visualization.arrayToDataTable([
+                                ['Task', 'Hours Spent Today'],
+                                ['Videos', 11],
+                                ['Practice Tests', 6],
+                                ['Mistake Analysis', 2],
+                                ['Summery Reading', 4]
+                                // ['', 7]
+                            ]);
+
+                            var options = {
+                                title: 'My Daily Activities'
+                            };
+
+                            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                            chart.draw(data, options);
+                        }
+                    </script>
+                    <div id="piechart" style="width: 520px; height: 400px; padding-right: 40px;"></div>
+                </div>
+                </div>
+
+                <div class="leaderboard">
+                <div class="leader-nav">
+                    <div class="div-m1">Dashboard</div>
+                    <div class="div-m2">Teachers</div>
+                    <div class="div-m3">Students</div>
+                    <div class="div-m4">Staff</div>
+                </div>
+                <div class="leader-heading">
+                    <div class="div-h1">Student Name</div>
+                    <div class="div-h2">Score</div>
+                    <div class="div-h3">Submitted</div>
+                    <div class="div-h4">Grade</div>
+                    <div class="div-h5">Pass/Fail</div>
+                </div>
+                <hr>
+                <div class="leader-content">
+                    <div class="div-c1"><img src="https://dummyimage.com/20x20/000000/fff" alt="profile pic"
+                            title="Profile Pic"> Student Name</div>
+                    <div class="div-c2">Score</div>
+                    <div class="div-c3">Submitted</div>
+                    <div class="div-c4">Grade</div>
+                    <div class="div-c5">Pass/Fail</div>
+                </div>
+                <hr>
+                <div class="leader-content">
+                    <div class="div-c1"><img src="https://dummyimage.com/20x20/000000/fff" alt="profile pic"
+                            title="Profile Pic"> Student Name</div>
+                    <div class="div-c2">Score</div>
+                    <div class="div-c3">Submitted</div>
+                    <div class="div-c4">Grade</div>
+                    <div class="div-c5">Pass/Fail</div>
+                </div>
+                <hr>
+                <div class="leader-content">
+                    <div class="div-c1"><img src="https://dummyimage.com/20x20/000000/fff" alt="profile pic"
+                            title="Profile Pic"> Student Name</div>
+                    <div class="div-c2">Score</div>
+                    <div class="div-c3">Submitted</div>
+                    <div class="div-c4">Grade</div>
+                    <div class="div-c5">Pass/Fail</div>
+                </div>
+                <hr>
+                <div class="leader-content">
+                    <div class="div-c1"><img src="https://dummyimage.com/20x20/000000/fff" alt="profile pic"
+                            title="Profile Pic"> Student Name</div>
+                    <div class="div-c2">Score</div>
+                    <div class="div-c3">Submitted</div>
+                    <div class="div-c4">Grade</div>
+                    <div class="div-c5">Pass/Fail</div>
+                </div>
+                <hr>
+                <div class="leader-content">
+                    <div class="div-c1"><img src="https://dummyimage.com/20x20/000000/fff" alt="profile pic"
+                            title="Profile Pic"> Student Name</div>
+                    <div class="div-c2">Score</div>
+                    <div class="div-c3">Submitted</div>
+                    <div class="div-c4">Grade</div>
+                    <div class="div-c5">Pass/Fail</div>
+                </div>
+                <hr>
+                <div class="leader-content">
+                    <div class="div-c1"><img src="https://dummyimage.com/20x20/000000/fff" alt="profile pic"
+                            title="Profile Pic"> Student Name</div>
+                    <div class="div-c2">Score</div>
+                    <div class="div-c3">Submitted</div>
+                    <div class="div-c4">Grade</div>
+                    <div class="div-c5">Pass/Fail</div>
+                </div>
+                </div>
+            </div>
+
+            <div id="page-2">
+                <div class="second">\
+
+                <div class="divc1">
+                    <div id="donutchart" style="width: 595px; height: 500px;"></div>
+                    <div class="part-1">
+                        <h4 class="h4">Parts of the pie chart</h4>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            The color box represents a part in the whole.</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                                The color box represents a part in the whole.</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            The color box represents a part in the whole.</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            The color box represents a part in the whole.</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            The color box represents a part in the whole.</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            The color box represents a part in the whole.</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            The color box represents a part in the whole.</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            The color box represents a part in the whole.</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            The color box represents a part in the whole.</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            The color box represents a part in the whole.</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            The color box represents a part in the whole.</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            The color box represents a part in the whole.</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            The color box represents a part in the whole.</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            The color box represents a part in the whole.</p>
+                    </div>
+                </div>
+        
+                <div class="divc2">
+                    <!-- <button id="change-chart">Change to Classic</button> -->
+                    <!-- <br><br> -->
+                    <div id="chart_div"></div>
+        
+                    <div class="part-2">
+                        <h4 class="h4">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</h4>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            -------------------------------</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            ________________________________</p>
+                            <h4 class="h4">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</h4>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            -------------------------------</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            ________________________________</p>
+                            <h4 class="h4">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</h4>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            -------------------------------</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            ________________________________</p>
+                            <h4 class="h4">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</h4>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            -------------------------------</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            ________________________________</p>
+                            <h4 class="h4">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</h4>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            -------------------------------</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            ________________________________</p>
+                            <h4 class="h4">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</h4>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            -------------------------------</p>
+                        <p class="para"><span class="color-box" style="background:#f6b45b;">&nbsp;</span>&nbsp;&nbsp
+                            ________________________________</p>
+                </div>
+        
+            </div>
+        </div>
+            </div>
+            
+            <div id="page-3"></div>
+            <div id="page-4"></div>
+            <div id="page-5"></div>
+
+            <div id="page-6">
+
+            </div>
+
+        </div>
+
+        <div class="div3" id="div3">
+            <iframe id="calender"
+                src="https://calendar.google.com/calendar/embed?height=300&wkst=2&bgcolor=%23ffffff&ctz=Asia%2FKolkata&showTz=0&showTabs=0&showCalendars=0&showNav=1&showTitle=0&showPrint=0"
+                style="border-width:0" width="307" height="300" frameborder="0" scrolling="no"></iframe>
+            <iframe id="events"
+                src="https://calendar.google.com/calendar/embed?height=300&wkst=2&bgcolor=%23ffffff&ctz=Asia%2FKolkata&showTz=0&showTabs=0&showCalendars=0&showNav=0&showTitle=0&showPrint=0&mode=AGENDA&showDate=0&src=ZW4uaW5kaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%230B8043"
+                style="border-width:0" width="307" height="300" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
+
+        <script src="script.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+    <script>
+              google.charts.load('current', {'packages':['line', 'corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var button = document.getElementById('change-chart');
+      var chartDiv = document.getElementById('chart_div');
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('date', 'Month');
+      data.addColumn('number', "Average Temperature");
+      data.addColumn('number', "Average Hours of Daylight");
+
+      data.addRows([
+        [new Date(2014, 0),  -.5,  5.7],
+        [new Date(2014, 1),   .4,  8.7],
+        [new Date(2014, 2),   .5,   12],
+        [new Date(2014, 3),  2.9, 15.3],
+        [new Date(2014, 4),  6.3, 18.6],
+        [new Date(2014, 5),    9, 20.9],
+        [new Date(2014, 6), 10.6, 19.8],
+        [new Date(2014, 7), 10.3, 16.6],
+        [new Date(2014, 8),  7.4, 13.3],
+        [new Date(2014, 9),  4.4,  9.9],
+        [new Date(2014, 10), 1.1,  6.6],
+        [new Date(2014, 11), -.2,  4.5]
+      ]);
+
+      var materialOptions = {
+        chart: {
+          title: 'Average Temperatures and Daylight in Iceland Throughout the Year'
+        },
+        width: 600,
+        height: 500,
+        series: {
+          // Gives each series an axis name that matches the Y-axis below.
+          0: {axis: 'Temps'},
+          1: {axis: 'Daylight'}
+        },
+        axes: {
+          // Adds labels to each axis; they don't have to match the axis names.
+          y: {
+            Temps: {label: 'Temps (Celsius)'},
+            Daylight: {label: 'Daylight'}
+          }
+        }
+      };
+
+      var classicOptions = {
+        title: 'Average Temperatures and Daylight in Iceland Throughout the Year',
+        width: 900,
+        height: 500,
+        // Gives each series an axis that matches the vAxes number below.
+        series: {
+          0: {targetAxisIndex: 0},
+          1: {targetAxisIndex: 1}
+        },
+        vAxes: {
+          // Adds titles to each axis.
+          0: {title: 'Temps (Celsius)'},
+          1: {title: 'Daylight'}
+        },
+        hAxis: {
+          ticks: [new Date(2014, 0), new Date(2014, 1), new Date(2014, 2), new Date(2014, 3),
+                  new Date(2014, 4),  new Date(2014, 5), new Date(2014, 6), new Date(2014, 7),
+                  new Date(2014, 8), new Date(2014, 9), new Date(2014, 10), new Date(2014, 11)
+                 ]
+        },
+        vAxis: {
+          viewWindow: {
+            max: 30
+          }
+        }
+      };
+
+      function drawMaterialChart() {
+        var materialChart = new google.charts.Line(chartDiv);
+        materialChart.draw(data, materialOptions);
+        button.innerText = 'Change to Classic';
+        button.onclick = drawClassicChart;
+      }
+
+      function drawClassicChart() {
+        var classicChart = new google.visualization.LineChart(chartDiv);
+        classicChart.draw(data, classicOptions);
+        button.innerText = 'Change to Material';
+        button.onclick = drawMaterialChart;
+      }
+
+      drawMaterialChart();
+
+    }
+    </script>
+</body>
+
+</html>
